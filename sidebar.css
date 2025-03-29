@@ -1,0 +1,206 @@
+:root {
+  /* -----> Colors */
+  --color-blue: hsl(213, 100%, 56%);
+  --color-purple: hsl(243, 31%, 30%);
+  --color-greyish-blue: hsl(215, 21%, 22%);
+  --color-dark-blue: hsl(216, 39%, 14%);
+  --color-very-dark-blue: hsl(215, 64%, 9%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-washed-white: hsl(0, 0%, 95%);
+
+  /* -----> Sizes */
+  --size-16: 16px;
+  --size-40: 40px;
+  --size-60: 60px;
+
+  --small-icon-16: var(--size-16);
+  --medium-icon-40: var(--size-40);
+  --big-icon-60: var(--size-60);
+
+  /* -----> Spacing */
+  --space-10: 10px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-56: 56px;
+
+  /* -----> Padding */
+  --small-padding-10: var(--space-10);
+  --medium-padding-20: var(--space-20);
+
+  /* -----> Margins */
+  --top-margin-20: var(--space-20);
+
+  --right-margin-16: var(--space-16);
+
+  --bottom-margin-16: var(--space-16);
+  --bottom-margin-56: var(--space-56);
+
+  /* -----> Gap */
+  --gap-small-10: var(--space-10);
+
+  /* -----> Layouts */
+  --border-radius-10: var(--space-10);
+  --border-radius-20: var(--space-20);
+
+  /* -----> Fonts & Typography */
+  --font-size-14: 14px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --font-family-body: 'Poppins', sans-serif;
+
+  --font-line-height-100: 100%;
+
+  --text-color-main: var(--color-white);
+  --text-color-accent: var(--color-blue);
+}
+
+/* RECUERDA, puedes desarrollar props. personalizadas para clases de utilidad.*/
+
+/* AJUSTES GENERALES */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  font-family: var(--font-family-body);
+  background-color: var(--color-very-dark-blue);
+}
+
+/* SIDEBAR GLOBAL */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 300px;
+  min-height: 100vh;
+
+  font-size: var(--font-size-18);
+  font-weight: var(--font-weight-normal);
+  color: var(--text-color-main);
+  background-color: var(--color-very-dark-blue);
+
+  padding: var(--small-padding-10);
+}
+
+/* TARJETITAS */
+
+.card {
+  display: flex;
+  font-size: var(--font-size-14);
+  background-color: var(--color-dark-blue);
+  padding: var(--small-padding-10);
+  border-radius: var(--border-radius-20);
+  gap: var(--gap-small-10);
+  align-items: center;
+
+  & p {
+    margin: 0;
+  }
+}
+
+.card__icon--big {
+  width: var(--big-icon-60);
+  height: var(--big-icon-60);
+  border-radius: var(--border-radius-20);
+}
+
+.card__text {
+  flex-grow: 1;
+}
+
+.card__title {
+  font-weight: var(--font-weight-bold);
+}
+
+.card__button {
+  width: var(--medium-icon-40);
+  height: var(--medium-icon-40);
+  border-radius: var(--border-radius-10);
+  background-color: var(--color-blue-light-dark);
+  border: none;
+}
+
+/* REUSABLE */
+
+.sidebar__icon {
+  width: var(--small-icon-16);
+  height: var(--small-icon-16);
+  vertical-align: middle;
+}
+
+/* NAV */
+
+.main-nav {
+  flex-grow: 1;
+  padding-left: var(--small-padding-10);
+  padding-right: var(--small-padding-10);
+}
+
+.nav__title {
+  color: var(--text-color-accent);
+  border-top: 2px solid var(--color-dark-blue);
+
+  font-size: var(--font-size-20);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--font-line-height-100);
+
+  padding: var(--space-20) 0 0 0;
+  margin: var(--top-margin-20) 0 0 0;
+}
+
+.nav__list {
+  padding-left: var(--small-padding-10);
+  margin: var(--top-margin-20) 0 var(--bottom-margin-56) 0;
+  list-style: none;
+
+  & li {
+    margin-bottom: var(--bottom-margin-16);
+    transition: all 0.15s ease-in-out;
+  }
+
+  & li:hover {
+    font-weight: var(--font-weight-medium);
+    background-color: var(--color-purple);
+
+    border-radius: var(--border-radius-10);
+    padding: var(--small-padding-10) var(--medium-padding-20);
+
+    transition: all 0.15s ease-in-out;
+  }
+
+  & li a {
+    text-decoration: none;
+    color: var(--color-white);
+  }
+
+  & li img {
+    margin-right: var(--right-margin-16);
+  }
+}
+
+/* PROVISIONAL MAIN */
+
+main {
+  display: flex;
+  width: 100%;
+  background-color: var(--color-washed-white);
+  border-radius: var(--border-radius-20);
+  margin: var(--space-10) var(--space-10) var(--space-10) 0;
+  padding: var(--small-padding-10);
+
+  & .white-section {
+    background-color: var(--color-white);
+    min-width: 50%;
+    border-radius: var(--border-radius-20);
+  }
+}
